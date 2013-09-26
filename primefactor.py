@@ -82,6 +82,7 @@ mods=query%primef
 indices=numpy.where(mods==0)[0]
 primef=primef[indices]
 primef=numpy.append(primef,qbak)
+if len(primef)==1: breaktrue=True
 print("Starting search ...")
 while i < len(primef):
     divisor=primef[i]
@@ -162,6 +163,6 @@ npa=numpy.array(plist)
 nmax=npa.max()
 if nmax < 3 and nmax is not qbak: plist.append(qbak)
 elapsed=time.time()-starttime
-if len(plist)>1: print("The prime factorization for "+str(input)+" is "+str(plist))
+if len(plist)>2: print("The prime factorization for "+str(input)+" is "+str(plist))
 else: print(str(input)+" is a prime number.")
 print("Total elapsed time: "+str(elapsed)+" seconds")
